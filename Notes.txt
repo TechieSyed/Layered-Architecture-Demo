@@ -1,0 +1,69 @@
+Employee Management System
+- Add an employee
+- Remove an employee
+- Update an employee
+- Display all employee
+
+
+Employee
+- Id
+- Name
+- Email
+
+
+Business rules
+- Add employee
+  - Name and email should not be left blank
+  - Email should always end with .com
+  - It should contain @ somewhere in the string
+
+
+PresentationLayer - Console
+BusinessLogicLayer - Class library
+DataAccessLayer - Class library
+
+
+
+
+References 
+Data Access Layer -> refer -> System.Configuration.dll
+Business Logic Layer -> refer -> Data Access Layer
+Presentation Layer -> refer -> Business Logic Layer
+
+
+
+Classes
+Data Access Layer ->   EmployeeDAO (Data Access Object)
+Business Logic Layer -> EmployeeBO (Business Object)
+                        Employee (Entity)
+                        EmployeeException (Custom Exception)
+Presentation Layer -> Program (Console User Interface)
+
+
+Methods
+EmployeeDAO
+ -Add(name, email) : int
+ -Delete(id) : int
+ -Update(id, name, email) : int
+ -GetAll() : DataTable
+
+
+EmployeeBO
+  -Add(Employee) : bool
+  -Update(Employee) : bool
+  -Delete(id) : bool
+  -GetEmployees() : List<Employee>
+  -Validate(Employee, string) : bool
+
+
+Program
+  - Main()
+  - AddEmployee()
+  - EditEmployee()
+  - DeleteEmployee()
+  - DisplayAllEmployees()
+
+
+
+
+
